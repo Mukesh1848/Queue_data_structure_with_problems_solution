@@ -1,0 +1,22 @@
+class Solution {
+    public:
+
+      int firstUniqChar(string s) {
+        int arr[26]={0};
+        int ans = -1;
+        // store count of all character
+        for(int i=0; i<s.length(); i++){
+            int index = s[i]-'a';
+            arr[index]++;
+        }
+        // find whose character that can store count one
+        for(int i=0;i<s.length();i++){
+            if(arr[s[i]-'a'] == 1) return i; 
+        }
+        return ans;
+    
+    }
+};
+
+T.C. = O(N);
+S.C. =O(1)  // only 26 charcater that wise 
